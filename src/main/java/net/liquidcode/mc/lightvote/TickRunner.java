@@ -24,7 +24,7 @@ public class TickRunner extends BukkitRunnable {
     public void run() {
         for (World world : new HashSet<>(lightVote.worldTicks.keySet())) {
             int tick = lightVote.worldTicks.get(world);
-            if (tick == 5) {
+            if (tick == 7) {
                 lightVote.checkIfEnoughVotes(world.getName());
                 lightVote.worldTicks.remove(world);
             } else {
