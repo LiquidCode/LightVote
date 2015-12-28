@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import net.liquidcode.mc.ezpz.Ezpz;
+import org.bukkit.ChatColor;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -66,6 +67,13 @@ public class LightVote extends JavaPlugin {
             long time = worlds.get(0).getTime();
             time += 24000 - (time % 24000);
             worlds.get(0).setTime(time);
+        } else {
+            int neededPlayers = (int) Math.ceil(players * requiredVotes) - votes;
+            String plural = neededPlayers == 1 ? "" : "s";
+            this.getServer().broadcastMessage(String.format(
+                    "%sSystem » %s%s out of %s players are asleep. Need %s more player%s.",
+                    ChatColor.DARK_AQUA, ChatColor.AQUA,
+                    votes, players, neededPlayers, plural));
         }
     }
 
