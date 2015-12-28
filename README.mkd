@@ -7,8 +7,15 @@ This file should be located in `plugins/LightVote/config.yml`.
 
 ```yaml
 requiredvotes:
-    type: fraction
+    # The type of value that the required votes will be be given in.
+    # Fractions work better for numbers like 2 / 3 (66.6666…7%), while
+    # percentage is enough for 2 / 4 or 3 / 4 (50% and 75%).
+    type: fraction # Either fraction or percentage
+
+    # If using percentage as type. This is a number between 0.0 and 1.0.
     percentage: 0.75
+
+    # If using fraction as type
     fraction:
         numerator: 2
         denominator: 3
