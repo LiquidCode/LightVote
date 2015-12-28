@@ -1,0 +1,15 @@
+# LightVote
+A plugin that lets you set the you set the amount of players needed to
+fast-forward time by sleeping.
+
+## Example configuration
+This file should be located in `plugins/LightVote/config.yml`.
+
+```yaml
+requiredvotes:
+    type: fraction
+    percentage: 0.75
+    fraction:
+        numerator: 2
+        denominator: 3
+```
